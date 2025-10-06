@@ -28,3 +28,23 @@ for env in env_details:
             if key == "active" and value == True:
                 print(env.values())    
 
+
+
+set1 = {}
+
+set2 = {1,2}
+
+set3 = {
+        "a": "1",
+        "b": "2",
+        "c": "hmm"}
+
+print(type(set1))
+print(type(set2))
+print(type(set3))
+
+list_of_env = ["dev", "stg", "prd", "tst", "qa", "qa", "dev"]
+print(list_of_env)
+
+list_of_env = list(set(list_of_env))
+print(list_of_env)
