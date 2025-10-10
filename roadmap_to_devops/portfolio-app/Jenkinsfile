@@ -1,0 +1,45 @@
+pipeline{
+    agent {label "dev"};
+    stages{
+        stage("Code"){
+            steps{
+                git url: "https://github.com/satinderkaura348-ops/community_portfolio.git", branch: "main"
+                
+            }
+        }
+        stage("Build"){
+            steps{
+                sh "docker build -t community-app ."
+            }
+        }
+        stage("Test"){
+            steps{
+                echo "Developer jaane aur uska kaam jaane"
+            }
+        }
+        stage("Deploy"){
+            steps{
+                sh "docker-compose up -d"
+            }
+        }
+    }
+    
+post{
+    success{
+        script{
+            emailext from: 'satinder42020@gmail.com',
+            to: 'satinder42020@gmail.com',
+            body: 'Build successful for CICD portfolio app',
+            subject: 'Build successful for CICD portfolio app'
+        }
+    }
+    failure{
+        script{
+            emailext from: 'satinder42020@gmail.com', 
+            to: 'satinder42020@gmail.com',
+            body: 'Build Failed for CICD portfolio app',
+            subject: 'Build Failed for CICD portfolio app'
+        }
+    }
+}    
+}
