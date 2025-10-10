@@ -7,6 +7,11 @@ pipeline{
                 
             }
         }
+        stage("Trivy Test"){
+            steps{
+                sh "trivy fs . -o results.json"
+            }
+        }
         stage("Build"){
             steps{
                 sh "docker build -t community-app ."
@@ -43,3 +48,4 @@ post{
     }
 }    
 }
+
