@@ -1,10 +1,19 @@
+@Library("shared") _
 pipeline{
     agent {label "dev"};
     stages{
         stage("Code"){
             steps{
-                git url: "https://github.com/satinderkaura348-ops/community_portfolio.git", branch: "main"
-                
+                script {
+                clone("https://github.com/satinderkaura348-ops/community_portfolio.git", "main")
+                }
+            }
+        }
+        stage("Trivy Test"){
+            steps{
+                script{
+                    trivy_fs
+                }
             }
         }
         stage("Build"){
@@ -14,7 +23,14 @@ pipeline{
         }
         stage("Test"){
             steps{
-                echo "Developer jaane aur uska kaam jaane"
+                echo "To be confirmed by developer"
+            }
+        }
+        stage("Push to docker hub"){
+            steps{
+                script{
+                    docker_push("dockerHubCreds", "community-app")
+                }
             }
         }
         stage("Deploy"){
@@ -43,3 +59,6 @@ post{
     }
 }    
 }
+
+
+
