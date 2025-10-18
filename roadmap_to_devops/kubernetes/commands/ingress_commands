@@ -1,0 +1,4 @@
+kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/deploy-ingress-nginx.yaml   # to install ingress
+kubectl get svc -n ingress-nginx
+kubectl get pods -n ingress-nginx
+sudo -E kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 80:80 --address=0.0.0.0     # to port map ingress
