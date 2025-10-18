@@ -14,4 +14,4 @@ kubectl apply -f deployment.yml
 vi service.yml
 kubectl apply -f service.yml
 kubectl get all -n <nameSpace>   # to verify all running services
-kubectl port-forward svc/<serviceName> -n <nameSpace> <hostPort:clusterPort> -address=0.0.0.0
+kubectl port-forward svc/<serviceName> -n <nameSpace> <hostPort:clusterPort> --address=0.0.0.0
