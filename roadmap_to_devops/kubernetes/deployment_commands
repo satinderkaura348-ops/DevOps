@@ -1,0 +1,7 @@
+kubectl apply -f deployment.yml --dry-run=client
+kubectl apply -f deployment.yml
+kubectl get deployment -n <namespace>
+kubectl get pods -n <namespace>
+kubectl scale deployment <deployment name> -n <nameSpace> --replicas=10
+kubectl delete pod <pod name> -n <nameSpace>
+kubectl delete -f deployment.yml
