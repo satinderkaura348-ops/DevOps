@@ -1,0 +1,17 @@
+git clone <url>
+cd <cloned dir>
+docker build -t <image name:latest> .   # to build a new image
+docker run -d -p 5173:80 <image name:latest>   #just to test if container  is working locally
+docker stop $(docker ps -qa)
+docker rm $(docker ps -qa)
+docker image tag <name of image:latest> <dockerHubUsername/name of image:latest>
+docker login
+docker push <dockerHubUsername/image name:latest>
+Create a new directory as k8s, and inside it create namespace.yml
+kubectl apply -f namespace.yml
+vi deployment.yml
+kubectl apply -f deployment.yml
+vi service.yml
+kubectl apply -f service.yml
+kubectl get all -n <nameSpace>   # to verify all running services
+kubectl port-forward svc/<serviceName> -n <nameSpace> <hostPort:clusterPort> -address=0.0.0.0
