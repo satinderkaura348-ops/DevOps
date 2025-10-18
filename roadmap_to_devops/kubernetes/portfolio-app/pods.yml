@@ -9,4 +9,4 @@ spec:
   - name: portfolio-app
     image: satinderkaura348/portfolio-app
     ports:
-    - containerPort: 8080
+    - containerPort: 3000
