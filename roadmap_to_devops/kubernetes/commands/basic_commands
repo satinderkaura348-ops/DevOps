@@ -1,0 +1,5 @@
+kind create cluster --name <cluster name>
+kubectl config get-contexts
+kubectl config current-context
+kubectl get nodes
+kubectl get pods --all-namespaces
