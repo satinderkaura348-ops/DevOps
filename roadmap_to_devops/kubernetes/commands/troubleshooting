@@ -1,0 +1,2 @@
+kubectl describe pod/<container name> -n <namespace>
+kubectl logs pod/<container name> -n namespace

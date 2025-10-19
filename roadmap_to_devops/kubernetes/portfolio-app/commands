@@ -1,0 +1,7 @@
+kubectl apply -f namespace.yml
+kubectl apply -f deployment.yml
+kubectl apply -f pods.yml
+kubectl apply -f service.yml
+sudo -E kubectl port-forward svc/portfolio-svc -n portfolio-ns 82:82 --address=0.0.0.0  # to deploy app with port based routing
+kubectl apply -f ingress.yml
+sudo -E kubectl port-forward svc/portfolio-svc -n portfolio-ns 82:82 --address=0.0.0.0 # after applying ingress to deploy app with path based routing

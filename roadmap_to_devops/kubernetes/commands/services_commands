@@ -1,0 +1,2 @@
+kubectl apply -f service.yml
+sudo kubectl port-forward svc/portfolio-svc -n portfolio-ns 82:82 --address=0.0.0.0   # To map host port with cluster's port
