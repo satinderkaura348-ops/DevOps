@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: portfolio-deployment
+  namespace: portfolio-ns
+  labels:
+    app: portfolio
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: portfolio
+
+  template:
+    metadata:
+      labels:
+        app: portfolio
+
+    spec:
+      containers:
+      - name: portfolio-app
+        image: satinderkaura348/portfolio-app
+        ports:
+        - containerPort: 8080
+~
