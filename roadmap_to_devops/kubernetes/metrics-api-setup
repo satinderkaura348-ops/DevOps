@@ -1,0 +1,9 @@
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml serviceaccount/metrics-server created  # install metrics
+kubectl -n kube-system edit deployment metrics-server # edit deployment file, 
+
+
+# in spec.containers.args  , add following arguments
+- --kubelet-insecure-tls
+- --kubelet-preferred-address-types=InternalIP,Hostname,ExternalIP
+
+kubectl -n kube-system rollout restart deployment metrics-server # restart the metric-server
