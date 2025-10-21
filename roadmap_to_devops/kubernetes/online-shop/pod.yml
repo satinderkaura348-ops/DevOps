@@ -4,6 +4,8 @@ apiVersion: v1
 metadata:
   name: online-shop-pod
   namespace: online-shop
+  labels:
+    app.kubernetes.io/name: online-shop
 
 spec:
   containers:
