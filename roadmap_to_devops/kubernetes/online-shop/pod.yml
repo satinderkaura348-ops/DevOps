@@ -10,4 +10,4 @@ spec:
   - name: online-shop
     image: satinderkaura348/online_shop_app
     ports:
-    - containerPort: 80
+    - containerPort: 3000
