@@ -9,3 +9,7 @@
 
 # To execute .tf and to generate final output
     terraform apply
+
+# To delete/destroy
+    terraform destroy
+
