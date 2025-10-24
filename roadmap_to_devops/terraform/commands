@@ -1,0 +1,11 @@
+# To create terraform environment
+    terraform init  
+
+# validate your script
+    terraform validate
+
+# How does the output look like after executing, to check
+    terraform plan
+
+# To execute .tf and to generate final output
+    terraform apply
