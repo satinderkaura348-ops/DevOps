@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+
+metadata:
+  name: online-shop-pod
+  namespace: online-shop
+  labels:
+    app.kubernetes.io/name: online-shop
+
+spec:
+  containers:
+  - name: online-shop
+    image: satinderkaura348/online_shop_app
+    ports:
+    - containerPort: 3000
