@@ -13,3 +13,12 @@
 # To delete/destroy
     terraform destroy
 
+# To format .tf files in correct order
+    terraform fmt
+
+# To list all the resources
+    terraform state list
+
+# To delete a specific resource
+    terraform destroy --target=<resource name>
+
