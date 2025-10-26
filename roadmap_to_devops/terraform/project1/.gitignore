@@ -1,35 +1,12 @@
-# Terraform directories
+terraform.lock.hcl
+ FETCH_HEAD
+terra-key
+terra-key.pub
+terraform.tfstate.1761439578.backup
+variables.tf
+terraform.tfstate.1761443077.backup
+terraform.tfstate.backup
+terraform.tfstate
+.terraform.lock.hcl
 .terraform/
-
-# Terraform state files
-*.tfstate
-*.tfstate.backup
-
-# Crash logs
-crash.log
-crash.*.log
-
-# Override & variable files
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-*.tfvars
-*.tfvars.json
-*.auto.tfvars
-
-# Environment & plan files
-.env
-*.plan
-terraform.tfplan
-
-# IDE / system files
-.vscode/
-.idea/
-*.iml
-.DS_Store
-
-.terra-key
-.terra-key.pub
-
-.variables
+FETCH_HEAD
