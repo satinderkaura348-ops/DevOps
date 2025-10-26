@@ -8,4 +8,3 @@ terraform.tfstate
 terraform.tfstate.1761439578.backup
 terraform.tfstate.1761443077.backup
 terraform.tfstate.backup
-variables.tf
