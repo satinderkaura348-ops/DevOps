@@ -22,3 +22,12 @@
 # To delete a specific resource
     terraform destroy --target=<resource name>
 
+
+# To import existing aws server to terraform
+    terraform import <resource type>.<resource name> <instance id>
+
+# To refresh terraform
+    terraform refresh
+
+# To create new branch from existing terraform environment
+    terraform workspace new <workspace name, like dev/prd>
