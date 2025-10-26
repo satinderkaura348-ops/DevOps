@@ -60,18 +60,34 @@ resource "aws_security_group" "my_security_group" {
 
 # ec2 instance
 resource "aws_instance" "my-test" {
+    for_each = tomap ({
+        Test-automate-micro = "t2.micro"
+        # Test-automate-medium = "t2.medium"
+    }) # meta argument
+
+    depends_on = [aws_security_group.my_security_group, aws_key_pair.my_key]
+
     key_name = aws_key_pair.my_key.key_name
     vpc_security_group_ids = [aws_security_group.my_security_group.id]
-    instance_type = var.ec2_instance_type
+    instance_type = each.value
     ami = var.ec2_ami_id   # ubuntu   
     subnet_id = data.aws_subnets.default.ids[0]   # Specify subnet explicitly
     associate_public_ip_address = true
     user_data = file("install_nginx.sh")
     root_block_device {
-        volume_size = var.ec2_root_storage_size
+        volume_size = var.env == "prd" ? 20 : var.ec2_default_root_storage_size    # if env is prd then 20GiB otherwise default root storage
         volume_type = "gp3"
     }
     tags = {
-        name = "terraform-test-ec2"
+        name = each.key
     }
 }
+
+
+# To import existing server into terraform, use terraform import command and below code
+# resource "aws_instance" "manual_instance" {
+#     ami = "unknown"
+#     instance_type = "unknown"
+# }
+
+
