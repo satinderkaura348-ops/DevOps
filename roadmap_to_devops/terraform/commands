@@ -29,5 +29,12 @@
 # To refresh terraform
     terraform refresh
 
-# To create new branch from existing terraform environment
+# To check current workspace
+    terraform workspace list
+
+# To create new workspace from existing terraform environment
     terraform workspace new <workspace name, like dev/prd>
+
+# To switch workspace
+    terraform workspace select <branch name>
+
