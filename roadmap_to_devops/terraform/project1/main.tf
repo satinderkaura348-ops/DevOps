@@ -80,6 +80,7 @@ resource "aws_instance" "my-test" {
     }
     tags = {
         name = each.key
+        Environment = var.env
     }
 }
 
