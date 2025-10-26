@@ -1,0 +1,11 @@
+.terraform.lock.hcl
+.terraform/environment
+.terraform/providers/registry.terraform.io/hashicorp/aws/6.18.0/linux_amd64/LICENSE.txt
+.terraform/providers/registry.terraform.io/hashicorp/aws/6.18.0/linux_amd64/terraform-provider-aws_v6.18.0_x5
+terra-key
+terra-key.pub
+terraform.tfstate
+terraform.tfstate.1761439578.backup
+terraform.tfstate.1761443077.backup
+terraform.tfstate.backup
+variables.tf
